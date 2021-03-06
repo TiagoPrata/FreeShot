@@ -13,6 +13,7 @@ namespace KeatingShot
         public frmPrintedImages()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         private void PrintScreenImage_SizeChanged(object sender, EventArgs e)
