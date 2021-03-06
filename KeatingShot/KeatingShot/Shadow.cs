@@ -18,6 +18,8 @@ namespace KeatingShot
             ShowInTaskbar = false;
             //WindowState = FormWindowState.Minimized;
             FormBorderStyle = FormBorderStyle.None;
+
+            TCResize resizablePicture = new TCResize(this.pictureBox1);
         }
 
         private void frmShadow_Load(object sender, EventArgs e)
