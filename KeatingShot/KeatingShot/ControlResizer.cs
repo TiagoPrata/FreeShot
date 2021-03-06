@@ -40,7 +40,7 @@ namespace KeatingShot
 
     public class ControlResizer
     {
-        Control controltobeResized;
+        Control controlToBeResized;
         static readonly int borderSize = 3;
         static readonly Color borderColor = Color.DarkGray;
         public static int BorderSize
@@ -55,16 +55,16 @@ namespace KeatingShot
 
         public ControlResizer(Control theControl)
         {
-            controltobeResized = theControl;
+            controlToBeResized = theControl;
             InitializeComponent();
-            controltobeResized.Controls.Add(pictureBox1);
-            controltobeResized.Controls.Add(pictureBox2);
-            controltobeResized.Controls.Add(pictureBox3);
-            controltobeResized.Controls.Add(pictureBox4);
-            controltobeResized.Controls.Add(pictureBox5);
-            controltobeResized.Controls.Add(pictureBox6);
-            controltobeResized.Controls.Add(pictureBox7);
-            controltobeResized.Controls.Add(pictureBox8);
+            controlToBeResized.Controls.Add(pictureBox1);
+            controlToBeResized.Controls.Add(pictureBox2);
+            controlToBeResized.Controls.Add(pictureBox3);
+            controlToBeResized.Controls.Add(pictureBox4);
+            controlToBeResized.Controls.Add(pictureBox5);
+            controlToBeResized.Controls.Add(pictureBox6);
+            controlToBeResized.Controls.Add(pictureBox7);
+            controlToBeResized.Controls.Add(pictureBox8);
         }
 
         private PictureBox pictureBox1 = new PictureBox();
@@ -85,9 +85,9 @@ namespace KeatingShot
             this.pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             this.pictureBox1.BackColor = borderColor;
             this.pictureBox1.Cursor = Cursors.SizeWE;
-            this.pictureBox1.Location = new Point(controltobeResized.GetClientWidth(), borderSize);
+            this.pictureBox1.Location = new Point(controlToBeResized.GetClientWidth(), borderSize);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new Size(borderSize, controltobeResized.GetClientHeight() - borderSize);
+            this.pictureBox1.Size = new Size(borderSize, controlToBeResized.GetClientHeight() - borderSize);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseMove += new MouseEventHandler(this.pictureBox1_MouseMove);
@@ -99,9 +99,9 @@ namespace KeatingShot
             this.pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             this.pictureBox2.BackColor = borderColor;
             this.pictureBox2.Cursor = Cursors.SizeNS;
-            this.pictureBox2.Location = new Point(borderSize, controltobeResized.GetClientHeight());
+            this.pictureBox2.Location = new Point(borderSize, controlToBeResized.GetClientHeight());
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new Size(controltobeResized.GetClientWidth() - borderSize, borderSize);
+            this.pictureBox2.Size = new Size(controlToBeResized.GetClientWidth() - borderSize, borderSize);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.MouseMove += new MouseEventHandler(this.pictureBox2_MouseMove);
@@ -113,7 +113,7 @@ namespace KeatingShot
             this.pictureBox3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             this.pictureBox3.BackColor = borderColor;
             this.pictureBox3.Cursor = Cursors.SizeNWSE;
-            this.pictureBox3.Location = new Point(controltobeResized.GetClientWidth(), controltobeResized.GetClientHeight());
+            this.pictureBox3.Location = new Point(controlToBeResized.GetClientWidth(), controlToBeResized.GetClientHeight());
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new Size(borderSize, borderSize);
             this.pictureBox3.TabIndex = 3;
@@ -129,7 +129,7 @@ namespace KeatingShot
             this.pictureBox4.Cursor = Cursors.SizeWE;
             this.pictureBox4.Location = new Point(0, borderSize);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new Size(borderSize, controltobeResized.GetClientHeight() - borderSize);
+            this.pictureBox4.Size = new Size(borderSize, controlToBeResized.GetClientHeight() - borderSize);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.MouseMove += new MouseEventHandler(this.pictureBox4_MouseMove);
@@ -143,7 +143,7 @@ namespace KeatingShot
             this.pictureBox5.Cursor = Cursors.SizeNS;
             this.pictureBox5.Location = new Point(borderSize, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new Size(controltobeResized.GetClientWidth() - borderSize, borderSize);
+            this.pictureBox5.Size = new Size(controlToBeResized.GetClientWidth() - borderSize, borderSize);
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.MouseMove += new MouseEventHandler(this.pictureBox5_MouseMove);
@@ -155,7 +155,7 @@ namespace KeatingShot
             this.pictureBox6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             this.pictureBox6.BackColor = borderColor;
             this.pictureBox6.Cursor = Cursors.SizeNESW;
-            this.pictureBox6.Location = new Point(0, controltobeResized.GetClientHeight());
+            this.pictureBox6.Location = new Point(0, controlToBeResized.GetClientHeight());
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new Size(borderSize, borderSize);
             this.pictureBox6.TabIndex = 6;
@@ -183,7 +183,7 @@ namespace KeatingShot
             this.pictureBox8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.pictureBox8.BackColor = borderColor;
             this.pictureBox8.Cursor = Cursors.SizeNESW;
-            this.pictureBox8.Location = new Point(controltobeResized.GetClientWidth(), 0);
+            this.pictureBox8.Location = new Point(controlToBeResized.GetClientWidth(), 0);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new Size(borderSize, borderSize);
             this.pictureBox8.TabIndex = 8;
@@ -197,10 +197,10 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                controltobeResized.Width += e.X;
-                if (controltobeResized.Width < borderSize)
+                controlToBeResized.Width += e.X;
+                if (controlToBeResized.Width < borderSize)
                 {
-                    controltobeResized.Width = borderSize;
+                    controlToBeResized.Width = borderSize;
                 }
             }
         }
@@ -209,10 +209,10 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                controltobeResized.Height += e.Y;
-                if (controltobeResized.Height < borderSize)
+                controlToBeResized.Height += e.Y;
+                if (controlToBeResized.Height < borderSize)
                 {
-                    controltobeResized.Height = borderSize;
+                    controlToBeResized.Height = borderSize;
                 }
             }
         }
@@ -221,15 +221,15 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                controltobeResized.Width += e.X;
-                controltobeResized.Height += e.Y;
-                if (controltobeResized.Width < borderSize)
+                controlToBeResized.Width += e.X;
+                controlToBeResized.Height += e.Y;
+                if (controlToBeResized.Width < borderSize)
                 {
-                    controltobeResized.Width = borderSize;
+                    controlToBeResized.Width = borderSize;
                 }
-                if (controltobeResized.Height < borderSize)
+                if (controlToBeResized.Height < borderSize)
                 {
-                    controltobeResized.Height = borderSize;
+                    controlToBeResized.Height = borderSize;
                 }
             }
         }
@@ -238,13 +238,13 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                int newX = controltobeResized.Location.X + e.X;
-                int newY = controltobeResized.Location.Y;
-                controltobeResized.Width -= e.X;
-                controltobeResized.Location = new Point(newX, newY);
-                if (controltobeResized.Width < borderSize)
+                int newX = controlToBeResized.Location.X + e.X;
+                int newY = controlToBeResized.Location.Y;
+                controlToBeResized.Width -= e.X;
+                controlToBeResized.Location = new Point(newX, newY);
+                if (controlToBeResized.Width < borderSize)
                 {
-                    controltobeResized.Width = borderSize;
+                    controlToBeResized.Width = borderSize;
                 }
             }
         }
@@ -253,13 +253,13 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                int newX = controltobeResized.Location.X;
-                int newY = controltobeResized.Location.Y + e.Y;
-                controltobeResized.Height -= e.Y;
-                controltobeResized.Location = new Point(newX, newY);
-                if (controltobeResized.Height < borderSize)
+                int newX = controlToBeResized.Location.X;
+                int newY = controlToBeResized.Location.Y + e.Y;
+                controlToBeResized.Height -= e.Y;
+                controlToBeResized.Location = new Point(newX, newY);
+                if (controlToBeResized.Height < borderSize)
                 {
-                    controltobeResized.Height = borderSize;
+                    controlToBeResized.Height = borderSize;
                 }
             }
         }
@@ -268,18 +268,18 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                int newX = controltobeResized.Location.X + e.X;
-                int newY = controltobeResized.Location.Y;
-                controltobeResized.Location = new Point(newX, newY);
-                controltobeResized.Width -= e.X;
-                controltobeResized.Height += e.Y;
-                if (controltobeResized.Width < borderSize)
+                int newX = controlToBeResized.Location.X + e.X;
+                int newY = controlToBeResized.Location.Y;
+                controlToBeResized.Location = new Point(newX, newY);
+                controlToBeResized.Width -= e.X;
+                controlToBeResized.Height += e.Y;
+                if (controlToBeResized.Width < borderSize)
                 {
-                    controltobeResized.Width = borderSize;
+                    controlToBeResized.Width = borderSize;
                 }
-                if (controltobeResized.Height < borderSize)
+                if (controlToBeResized.Height < borderSize)
                 {
-                    controltobeResized.Height = borderSize;
+                    controlToBeResized.Height = borderSize;
                 }
             }
         }
@@ -288,18 +288,18 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                int newX = controltobeResized.Location.X + e.X;
-                int newY = controltobeResized.Location.Y + e.Y;
-                controltobeResized.Location = new Point(newX, newY);
-                controltobeResized.Width -= e.X;
-                controltobeResized.Height -= e.Y;
-                if (controltobeResized.Width < borderSize)
+                int newX = controlToBeResized.Location.X + e.X;
+                int newY = controlToBeResized.Location.Y + e.Y;
+                controlToBeResized.Location = new Point(newX, newY);
+                controlToBeResized.Width -= e.X;
+                controlToBeResized.Height -= e.Y;
+                if (controlToBeResized.Width < borderSize)
                 {
-                    controltobeResized.Width = borderSize;
+                    controlToBeResized.Width = borderSize;
                 }
-                if (controltobeResized.Height < borderSize)
+                if (controlToBeResized.Height < borderSize)
                 {
-                    controltobeResized.Height = borderSize;
+                    controlToBeResized.Height = borderSize;
                 }
             }
         }
@@ -308,18 +308,18 @@ namespace KeatingShot
         {
             if (e.Button == MouseButtons.Left)
             {
-                int newX = controltobeResized.Location.X;
-                int newY = controltobeResized.Location.Y + e.Y;
-                controltobeResized.Location = new Point(newX, newY);
-                controltobeResized.Width += e.X;
-                controltobeResized.Height -= e.Y;
-                if (controltobeResized.Width < borderSize)
+                int newX = controlToBeResized.Location.X;
+                int newY = controlToBeResized.Location.Y + e.Y;
+                controlToBeResized.Location = new Point(newX, newY);
+                controlToBeResized.Width += e.X;
+                controlToBeResized.Height -= e.Y;
+                if (controlToBeResized.Width < borderSize)
                 {
-                    controltobeResized.Width = borderSize;
+                    controlToBeResized.Width = borderSize;
                 }
-                if (controltobeResized.Height < borderSize)
+                if (controlToBeResized.Height < borderSize)
                 {
-                    controltobeResized.Height = borderSize;
+                    controlToBeResized.Height = borderSize;
                 }
             }
         }
