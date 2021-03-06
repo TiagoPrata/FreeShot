@@ -29,18 +29,31 @@ namespace KeatingShot
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.focusArea = new System.Windows.Forms.PictureBox();
+            this.focusAreaLoading = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.focusArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.focusAreaLoading)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // focusArea
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 188);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.focusArea.BackColor = System.Drawing.Color.White;
+            this.focusArea.Location = new System.Drawing.Point(12, 12);
+            this.focusArea.Name = "focusArea";
+            this.focusArea.Size = new System.Drawing.Size(100, 50);
+            this.focusArea.TabIndex = 0;
+            this.focusArea.TabStop = false;
+            this.focusArea.Visible = false;
+            // 
+            // focusAreaLoading
+            // 
+            this.focusAreaLoading.BackColor = System.Drawing.Color.White;
+            this.focusAreaLoading.Location = new System.Drawing.Point(12, 85);
+            this.focusAreaLoading.Name = "focusAreaLoading";
+            this.focusAreaLoading.Size = new System.Drawing.Size(100, 50);
+            this.focusAreaLoading.TabIndex = 1;
+            this.focusAreaLoading.TabStop = false;
+            this.focusAreaLoading.Visible = false;
             // 
             // frmShadow
             // 
@@ -48,20 +61,26 @@ namespace KeatingShot
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(294, 250);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.focusAreaLoading);
+            this.Controls.Add(this.focusArea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmShadow";
-            this.Opacity = 0.25D;
+            this.Opacity = 0.05D;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmShadow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseUp);
+            ((System.ComponentModel.ISupportInitialize)(this.focusArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.focusAreaLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox focusArea;
+        private System.Windows.Forms.PictureBox focusAreaLoading;
     }
 }
 
