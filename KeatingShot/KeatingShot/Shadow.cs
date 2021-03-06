@@ -24,7 +24,7 @@ namespace KeatingShot
 
         private void frmShadow_Load(object sender, EventArgs e)
         {
-            PathExtensions.MakeHole(this, new Rectangle(100, 100, 100, 100));
+            
         }
     }
 }
