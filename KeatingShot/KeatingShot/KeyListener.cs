@@ -64,6 +64,7 @@ namespace KeatingShot
 
         public void PrtScnBtnPressed()
         {
+            if (shadowList.Count > 0 || printedList.Count > 0) return;
             CreatePrintedForms();
             CreateShadowForms();
         }
