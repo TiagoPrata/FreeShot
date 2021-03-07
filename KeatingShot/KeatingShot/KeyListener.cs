@@ -1,27 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Net;
-using System.Runtime.ConstrainedExecution;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace KeatingShot
 {
     public partial class frmKeyListener : Form
     {
         private readonly GlobalKeyboardHook _gkh = new GlobalKeyboardHook();
-        private bool _active;
-        private Rectangle _bounds;
-        private Graphics _formGraphics;
-        private int _initialX;
-        private int _initialY;
-        private bool _isDown;
-        private static readonly Random Random = new Random();
-        //Form f;
         private List<frmShadow> shadowList = new List<frmShadow>();
         private List<frmPrintedImages> printedList = new List<frmPrintedImages>();
 
