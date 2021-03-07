@@ -33,6 +33,18 @@ namespace KeatingShot
             FormBorderStyle = FormBorderStyle.None;
         }
 
+        protected override CreateParams CreateParams
+        {
+            // hidding application from alt+tab
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                // turn on WS_EX_TOOLWINDOW style bit
+                cp.ExStyle |= 0x80;
+                return cp;
+            }
+        }
+
         private void frmKeyListener_Load(object sender, EventArgs e)
         {
             _gkh.HookedKeys.Add(Keys.PrintScreen);
