@@ -83,6 +83,7 @@ namespace KeatingShot
                 printedList[last].StartPosition = FormStartPosition.Manual;
                 printedList[last].SetBounds(screen.Bounds.X, screen.Bounds.Y, screen.Bounds.Width, screen.Bounds.Height);
                 printedList[last].WindowState = FormWindowState.Maximized;
+                printedList[last].Text = Guid.NewGuid().ToString();
                 printedList[last].Show();
             }
         }
@@ -108,7 +109,19 @@ namespace KeatingShot
                 shadowList[last].SetBounds(screen.Bounds.X, screen.Bounds.Y, screen.Bounds.Width, screen.Bounds.Height);
                 shadowList[last].WindowState = FormWindowState.Maximized;
                 shadowList[last].TopMost = true;
+                shadowList[last].Text = Guid.NewGuid().ToString();
                 shadowList[last].Show();
+                shadowList[last].OnNewFocusAreaCreated += FrmKeyListener_OnNewFocusAreaCreated;
+            }
+        }
+
+        private void FrmKeyListener_OnNewFocusAreaCreated(object sender)
+        {
+            Form f = (Form)sender;
+            string formText = f.Text;
+            foreach (frmShadow frm in shadowList)
+            {
+                if (frm.Text != formText) frm.HideFocusAreas();
             }
         }
 

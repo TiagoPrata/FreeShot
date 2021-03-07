@@ -16,6 +16,10 @@ namespace KeatingShot
             ControlResizer resizablePicture = new ControlResizer(this.focusArea);
         }
 
+        public delegate void NewFocusAreaCreatedHandler(object sender);
+
+        public event NewFocusAreaCreatedHandler OnNewFocusAreaCreated;
+
         private void frmShadow_Load(object sender, EventArgs e)
         {
             
@@ -27,6 +31,7 @@ namespace KeatingShot
             this.focusAreaLoading.Location = new Point(e.X, e.Y);
             this.focusAreaLoading.Size = new Size(1, 1);
             this.focusAreaLoading.Visible = true;
+            OnNewFocusAreaCreated?.Invoke(this);
         }
 
         private void frmShadow_MouseMove(object sender, MouseEventArgs e)
@@ -44,6 +49,12 @@ namespace KeatingShot
             this.focusArea.Size = this.focusAreaLoading.Size;
             this.focusArea.Visible = true;
             this.focusAreaLoading.Visible = false;
+        }
+
+        public void HideFocusAreas()
+        {
+            focusArea.Visible = false;
+            focusAreaLoading.Visible = false;
         }
     }
 }
