@@ -27,6 +27,11 @@ namespace KeatingShot
 
         private void frmShadow_MouseDown(object sender, MouseEventArgs e)
         {
+            // Clean cropped rectangle
+            var region = new Region(this.ClientRectangle);
+            region.Exclude(new Rectangle(0,0,0,0));
+            this.Region = region;
+
             this.focusArea.Visible = false;
             this.focusAreaLoading.Location = new Point(e.X, e.Y);
             this.focusAreaLoading.Size = new Size(1, 1);
@@ -49,6 +54,15 @@ namespace KeatingShot
             this.focusArea.Size = this.focusAreaLoading.Size;
             this.focusArea.Visible = true;
             this.focusAreaLoading.Visible = false;
+
+            // Create a hole in the rectangle area below
+            var holeLocX = focusArea.Location.X + 3;
+            var holeLocY = focusArea.Location.Y + 3;
+            var holeSizeW = focusArea.Size.Width - 6;
+            var holeSizeH = focusArea.Size.Height - 6;
+            var region = new Region(this.ClientRectangle);
+            region.Exclude(new Rectangle(holeLocX,holeLocY,holeSizeW,holeSizeH));
+            this.Region = region;
         }
 
         public void HideFocusAreas()

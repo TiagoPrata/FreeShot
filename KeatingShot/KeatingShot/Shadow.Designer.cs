@@ -65,7 +65,7 @@ namespace KeatingShot
             this.Controls.Add(this.focusArea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmShadow";
-            this.Opacity = 0.05D;
+            this.Opacity = 0.35D;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmShadow_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseDown);
