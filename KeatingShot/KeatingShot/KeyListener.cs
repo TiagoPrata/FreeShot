@@ -50,6 +50,7 @@ namespace KeatingShot
                 case Keys.Escape:
                     ClearAndDeleteShadowForms();
                     ClearAndDeletePrintedForms();
+                    System.GC.Collect();
                     break;
             }
             e.Handled = true;
@@ -92,9 +93,10 @@ namespace KeatingShot
         {
             foreach (var form in printedList)
             {
-                form.Hide();
+                form.Close();
             }
-            printedList.Clear();
+            printedList = null;
+            printedList = new List<frmPrintedImages>();
         }
 
         public void CreateShadowForms()
@@ -129,9 +131,10 @@ namespace KeatingShot
         {
             foreach (var form in shadowList)
             {
-                form.Hide();
+                form.Close();
             }
-            shadowList.Clear();
+            shadowList = null;
+            shadowList = new List<frmShadow>();
         }
 
         static void f_KeyPress(object sender, KeyPressEventArgs e)
