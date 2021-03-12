@@ -174,6 +174,43 @@ namespace KeatingShot
             }
         }
 
+        protected override void OnClientSizeChanged(EventArgs e)
+        {
+            // creating cropped area
+            var holeLocX = this.Location.X + borderSize;
+            var holeLocY = this.Location.Y + borderSize;
+            var holeSizeW = this.Size.Width - 2 * borderSize;
+            var holeSizeH = this.Size.Height - 2 * borderSize;
+            var thisRegion = new Region(this.ClientRectangle);
+            thisRegion.Exclude(new Rectangle(3, 3, holeSizeW, holeSizeH));
+            this.Region = thisRegion;
+
+            if (this.Parent != null)
+            {
+                var parentRegion = new Region(this.Parent.ClientRectangle);
+                parentRegion.Exclude(new Rectangle(holeLocX, holeLocY, holeSizeW, holeSizeH));
+                this.Parent.Region = parentRegion;
+            }
+        }
+
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            // removing cropped area
+            if (!this.Visible)
+            {
+                var thisRegion = new Region(this.ClientRectangle);
+                thisRegion.Exclude(new Rectangle(0,0,0,0));
+                this.Region = thisRegion;
+
+                if (this.Parent != null)
+                {
+                    var parentRegion = new Region(this.Parent.ClientRectangle);
+                    parentRegion.Exclude(new Rectangle(0,0,0,0));
+                    this.Parent.Region = parentRegion;
+                }
+            }
+        }
+
         private void pictureBox_MouseEnter(object sender, EventArgs e)
         {
 

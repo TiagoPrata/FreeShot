@@ -57,7 +57,6 @@ namespace KeatingShot
             this.Load += new System.EventHandler(this.frmShadow_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.focusArea1)).EndInit();
             this.ResumeLayout(false);
 
