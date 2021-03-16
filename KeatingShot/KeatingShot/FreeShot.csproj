@@ -7,6 +7,22 @@
     <ApplicationIcon>cat.ico</ApplicationIcon>
     <AssemblyName>FreeShot</AssemblyName>
     <RootNamespace>FreeShot</RootNamespace>
+    <PackageProjectUrl>https://github.com/TiagoPrata/KeatingShot</PackageProjectUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 
 </Project>

@@ -10,6 +10,7 @@ namespace FreeShot
         private readonly GlobalKeyboardHook _gkh = new GlobalKeyboardHook();
         private List<frmShadow> shadowList = new List<frmShadow>();
         private List<frmPrintedImages> printedList = new List<frmPrintedImages>();
+        private AboutForm about = new AboutForm();
 
         public frmKeyListener()
         {
@@ -139,6 +140,11 @@ namespace FreeShot
         private void ctxMenu_Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ctxMenu_About_Click(object sender, EventArgs e)
+        {
+            about.Show();
         }
     }
 }
