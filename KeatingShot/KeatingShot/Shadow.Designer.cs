@@ -1,5 +1,5 @@
 ﻿
-namespace KeatingShot
+namespace FreeShot
 {
     partial class frmShadow
     {
@@ -29,7 +29,7 @@ namespace KeatingShot
         /// </summary>
         private void InitializeComponent()
         {
-            this.focusArea1 = new KeatingShot.FocusArea();
+            this.focusArea1 = new FreeShot.FocusArea();
             ((System.ComponentModel.ISupportInitialize)(this.focusArea1)).BeginInit();
             this.SuspendLayout();
             // 

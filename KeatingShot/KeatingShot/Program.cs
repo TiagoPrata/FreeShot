@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace KeatingShot
+namespace FreeShot
 {
     static class Program
     {

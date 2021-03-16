@@ -4,6 +4,9 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>cat.ico</ApplicationIcon>
+    <AssemblyName>FreeShot</AssemblyName>
+    <RootNamespace>FreeShot</RootNamespace>
   </PropertyGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace KeatingShot
+namespace FreeShot
 {
     public partial class frmShadow : Form
     {

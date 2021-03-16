@@ -1,5 +1,5 @@
 ﻿
-namespace KeatingShot
+namespace FreeShot
 {
     partial class frmPrintedImages
     {

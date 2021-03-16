@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace KeatingShot
+namespace FreeShot
 {
     public partial class frmKeyListener : Form
     {

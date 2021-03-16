@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace KeatingShot
+namespace FreeShot
 {
     class GlobalKeyboardHook
     {

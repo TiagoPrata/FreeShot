@@ -1,5 +1,5 @@
 ﻿
-namespace KeatingShot
+namespace FreeShot
 {
     partial class frmKeyListener
     {
@@ -29,7 +29,16 @@ namespace KeatingShot
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKeyListener));
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "FreeShot";
+            this.notifyIcon1.Visible = true;
             // 
             // frmKeyListener
             // 
@@ -46,5 +55,7 @@ namespace KeatingShot
         }
 
         #endregion
+
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
