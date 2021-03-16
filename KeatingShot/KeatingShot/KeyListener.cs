@@ -106,7 +106,6 @@ namespace FreeShot
                 int last;
                 shadowList.Add(new frmShadow());
                 last = shadowList.Count - 1;
-                shadowList[last].KeyPress += new KeyPressEventHandler(f_KeyPress);
                 shadowList[last].StartPosition = FormStartPosition.Manual;
                 shadowList[last].SetBounds(screen.Bounds.X, screen.Bounds.Y, screen.Bounds.Width, screen.Bounds.Height);
                 shadowList[last].WindowState = FormWindowState.Maximized;
@@ -135,22 +134,6 @@ namespace FreeShot
             }
             shadowList = null;
             shadowList = new List<frmShadow>();
-        }
-
-        static void f_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // This will exit when ANY key is pressed on ANY form
-            Application.Exit();
-        }
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            PrtScnBtnPressed();
-        }
-
-        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
-        {
-            PrtScnBtnPressed();
         }
 
         private void ctxMenu_Exit_Click(object sender, EventArgs e)

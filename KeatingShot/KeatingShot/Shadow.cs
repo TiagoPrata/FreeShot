@@ -22,11 +22,6 @@ namespace FreeShot
 
         public event NewFocusAreaCreatedHandler OnNewFocusAreaCreated;
 
-        private void frmShadow_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void frmShadow_MouseDown(object sender, MouseEventArgs e)
         {
             mouseOnClickPositionX = e.X;
