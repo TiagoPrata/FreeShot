@@ -211,6 +211,17 @@ namespace FreeShot
             }
         }
 
+        public Bitmap GetFocusAreaImage()
+        {
+            if (this.Parent == null) return null;
+
+            Bitmap bitmap = new Bitmap(this.Width, this.Height);
+            Graphics graphics = Graphics.FromImage(bitmap as Image);
+            graphics.CopyFromScreen(Parent.Location.X + this.Location.X, Parent.Location.Y + this.Location.Y, 0, 0, bitmap.Size);
+
+            return bitmap;
+        }
+
         private void pictureBox_MouseEnter(object sender, EventArgs e)
         {
 
