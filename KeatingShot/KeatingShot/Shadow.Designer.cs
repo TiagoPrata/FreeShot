@@ -54,6 +54,7 @@ namespace FreeShot
             this.Name = "frmShadow";
             this.Opacity = 0.35D;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmShadow_FormClosed);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmShadow_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.focusArea1)).EndInit();
