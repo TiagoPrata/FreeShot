@@ -49,9 +49,7 @@ namespace FreeShot
                     PrtScnBtnPressed();
                     break;
                 case Keys.Escape:
-                    ClearAndDeleteShadowForms();
-                    ClearAndDeletePrintedForms();
-                    System.GC.Collect();
+                    EscBtnPressed();
                     break;
             }
             e.Handled = true;
@@ -67,6 +65,13 @@ namespace FreeShot
             if (shadowList.Count > 0 || printedList.Count > 0) return;
             CreatePrintedForms();
             CreateShadowForms();
+        }
+
+        public void EscBtnPressed()
+        {
+            ClearAndDeleteShadowForms();
+            ClearAndDeletePrintedForms();
+            System.GC.Collect();
         }
 
         public void CreatePrintedForms()
