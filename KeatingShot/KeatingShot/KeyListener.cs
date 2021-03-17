@@ -119,7 +119,13 @@ namespace FreeShot
                 shadowList[last].Text = Guid.NewGuid().ToString();
                 shadowList[last].Show();
                 shadowList[last].OnNewFocusAreaCreated += FrmKeyListener_OnNewFocusAreaCreated;
+                shadowList[last].OnActionBarButtonExitClick += FrmKeyListener_OnActionBarButtonExitClick;
             }
+        }
+
+        private void FrmKeyListener_OnActionBarButtonExitClick(object sender)
+        {
+            EscBtnPressed();
         }
 
         private void FrmKeyListener_OnNewFocusAreaCreated(object sender)

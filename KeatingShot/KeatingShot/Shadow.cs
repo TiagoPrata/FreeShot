@@ -10,6 +10,7 @@ namespace FreeShot
         private int mouseOnClickPositionX;
         private int mouseOnClickPositionY;
         private SizeTooltip sizeTooltip = new SizeTooltip();
+        private ActionBar actionBar = new ActionBar();
 
         public frmShadow()
         {
@@ -23,6 +24,10 @@ namespace FreeShot
 
         public event NewFocusAreaCreatedHandler OnNewFocusAreaCreated;
 
+        public delegate void ActionBarButtonExitClick(object sender);
+
+        public event ActionBarButtonExitClick OnActionBarButtonExitClick;
+
         private void frmShadow_MouseDown(object sender, MouseEventArgs e)
         {
             mouseOnClickPositionX = e.X;
@@ -35,6 +40,10 @@ namespace FreeShot
             sizeTooltip.Show();
             sizeTooltip.Location = new Point(e.X + this.Location.X, e.Y + this.Location.Y - 18);
             sizeTooltip.TopMost = true;
+
+            actionBar.Show();
+            actionBar.Location = new Point(focusArea1.Location.X + this.Location.X, focusArea1.Location.Y + this.Location.Y + 18);
+            actionBar.TopMost = true;
 
             OnNewFocusAreaCreated?.Invoke(this);
         }
@@ -68,6 +77,7 @@ namespace FreeShot
                 }
                 sizeTooltip.UpdateLabelText(focusArea1.Size);
                 sizeTooltip.Location = new Point(focusArea1.Location.X + this.Location.X, focusArea1.Location.Y + this.Location.Y - 18);
+                actionBar.Location = new Point(focusArea1.Size.Width + focusArea1.Location.X + this.Location.X - actionBar.Size.Width, focusArea1.Size.Height + focusArea1.Location.Y + this.Location.Y + 18);
             }
         }
 
@@ -75,6 +85,7 @@ namespace FreeShot
         {
             focusArea1.Visible = false;
             sizeTooltip.Visible = false;
+            actionBar.Visible = false;
         }
 
         public ArrowDirection GetMouseXDirection(MouseEventArgs e)
@@ -101,6 +112,16 @@ namespace FreeShot
         {
             HideFocusAreas();
             System.GC.Collect();
+        }
+
+        private void frmShadow_Load(object sender, EventArgs e)
+        {
+            actionBar.OnButtonExitClick += ActionBar_OnButtonExitClick;
+        }
+
+        private void ActionBar_OnButtonExitClick(object sender)
+        {
+            OnActionBarButtonExitClick?.Invoke(this);
         }
     }
 }
