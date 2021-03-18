@@ -42,6 +42,7 @@ namespace FreeShot
             this.focusArea1.TabIndex = 2;
             this.focusArea1.TabStop = false;
             this.focusArea1.Visible = false;
+            this.focusArea1.SizeChanged += new System.EventHandler(this.focusArea1_SizeChanged);
             // 
             // frmShadow
             // 

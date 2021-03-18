@@ -75,10 +75,18 @@ namespace FreeShot
                     focusArea1.Width = e.X - focusArea1.Location.X;
                     focusArea1.Height = mouseOnClickPositionY - focusArea1.Location.Y;
                 }
-                sizeTooltip.UpdateLabelText(focusArea1.Size);
-                sizeTooltip.Location = new Point(focusArea1.Location.X + this.Location.X, focusArea1.Location.Y + this.Location.Y - 18);
-                actionBar.Location = new Point(focusArea1.Size.Width + focusArea1.Location.X + this.Location.X - actionBar.Size.Width, focusArea1.Size.Height + focusArea1.Location.Y + this.Location.Y + 18);
+                AdjustControls();
             }
+        }
+
+        private void AdjustControls()
+        {
+            sizeTooltip.UpdateLabelText(focusArea1.Size);
+            sizeTooltip.Location = new Point(focusArea1.Location.X + this.Location.X, focusArea1.Location.Y + this.Location.Y - 18);
+            sizeTooltip.TopMost = true;
+
+            actionBar.Location = new Point(focusArea1.Size.Width + focusArea1.Location.X + this.Location.X - actionBar.Size.Width, focusArea1.Size.Height + focusArea1.Location.Y + this.Location.Y + 18);
+            actionBar.TopMost = true;
         }
 
         public void HideFocusAreas()
@@ -152,6 +160,11 @@ namespace FreeShot
         private void ActionBar_OnButtonExitClick(object sender)
         {
             OnActionBarButtonExitClick?.Invoke(this);
+        }
+
+        private void focusArea1_SizeChanged(object sender, EventArgs e)
+        {
+            AdjustControls();
         }
     }
 }
