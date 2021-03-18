@@ -117,6 +117,36 @@ namespace FreeShot
         private void frmShadow_Load(object sender, EventArgs e)
         {
             actionBar.OnButtonExitClick += ActionBar_OnButtonExitClick;
+            actionBar.OnButtonSaveClick += ActionBar_OnButtonSaveClick;
+            actionBar.OnButtonCopyClick += ActionBar_OnButtonCopyClick;
+        }
+
+        private void ActionBar_OnButtonCopyClick(object sender)
+        {
+            Bitmap printedImage;
+            printedImage = focusArea1.GetFocusAreaImage();
+            Clipboard.SetImage(printedImage);
+
+            OnActionBarButtonExitClick?.Invoke(this);
+        }
+
+        private void ActionBar_OnButtonSaveClick(object sender)
+        {
+            Bitmap printedImage;
+            printedImage = focusArea1.GetFocusAreaImage();
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "PNG files (*.png)|*.png|JPG files (*.jpg)|*.jpg|Bitmap files (*.bmp)|*.bmp|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 1;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printedImage.Save(saveFileDialog1.FileName);
+            }
+
+            OnActionBarButtonExitClick?.Invoke(this);
         }
 
         private void ActionBar_OnButtonExitClick(object sender)

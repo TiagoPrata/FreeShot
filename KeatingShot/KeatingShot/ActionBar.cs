@@ -14,6 +14,14 @@ namespace FreeShot
 
         public event ButtonExitClick OnButtonExitClick;
 
+        public delegate void ButtonSaveClick(object sender);
+
+        public event ButtonSaveClick OnButtonSaveClick;
+
+        public delegate void ButtonCopyClick(object sender);
+
+        public event ButtonCopyClick OnButtonCopyClick;
+
         public ActionBar()
         {
             InitializeComponent();
@@ -37,6 +45,16 @@ namespace FreeShot
         private void btnExit_Click(object sender, EventArgs e)
         {
             OnButtonExitClick?.Invoke(this);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            OnButtonSaveClick?.Invoke(this);
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            OnButtonCopyClick?.Invoke(this);
         }
     }
 }

@@ -33,6 +33,8 @@ namespace FreeShot
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnCopy = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,9 @@ namespace FreeShot
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnExit,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.btnSave,
+            this.btnCopy});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -62,6 +66,26 @@ namespace FreeShot
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnSave
+            // 
+            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(23, 22);
+            this.btnSave.Text = "toolStripButton1";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCopy.Image = ((System.Drawing.Image)(resources.GetObject("btnCopy.Image")));
+            this.btnCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(23, 22);
+            this.btnCopy.Text = "toolStripButton1";
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // ActionBar
             // 
@@ -87,5 +111,7 @@ namespace FreeShot
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnExit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnSave;
+        private System.Windows.Forms.ToolStripButton btnCopy;
     }
 }
