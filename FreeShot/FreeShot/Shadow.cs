@@ -119,6 +119,8 @@ namespace FreeShot
         private void frmShadow_FormClosed(object sender, FormClosedEventArgs e)
         {
             HideFocusAreas();
+            sizeTooltip.Close();
+            actionBar.Close();
             System.GC.Collect();
         }
 
