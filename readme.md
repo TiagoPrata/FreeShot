@@ -13,7 +13,7 @@
 
 ## Preview
 
-![image](./_image/using.gif)
+![image](https://github.com/TiagoPrata/FreeShot/raw/master/_image/using.gif)
 
 ## Important
 
