@@ -17,6 +17,8 @@
 
 ## Important
 
-<span style="color:red">THIS PROJECT IS NO LONGER MAINTAINED</span>
+```diff
+- THIS PROJECT IS NO LONGER MAINTAINED
+```
 
 [Flameshot](https://github.com/flameshot-org) is a more robust and more advanced software being developed with the same purpose. So I'm no longer maintaining Freeshot and I'm start contributing to Flameshot, although feel free to use it.
